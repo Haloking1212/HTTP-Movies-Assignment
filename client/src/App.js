@@ -5,6 +5,7 @@ import SavedList from "./Movies/SavedList";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
 import UpdateMovie from "./Movies/UpdateMovie";
+import AddMovie from "./Movies/AddMovie";
 
 const App = () => {
   const [savedList, setSavedList] = useState([]);
@@ -12,14 +13,6 @@ const App = () => {
   const addToSavedList = movie => {
     setSavedList([...savedList, movie]);
   };
-
-  // const [update, setUpdate] = useState([])
-  // useEffect(() => {
-  //   axios
-  //     .get('http://localhost:5000/movies')
-  //     .then(res => setUpdate(res.data))
-  //     .catch(error => console.log(error));
-  // }, []);
 
   return (
     <>
@@ -34,6 +27,10 @@ const App = () => {
       <Route 
         path="/update_movie/:id"
         component={UpdateMovie}
+      />
+      <Route 
+        path="/add-movie"
+        component={AddMovie}
       />
     </>
   );
